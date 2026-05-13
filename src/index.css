@@ -1,0 +1,280 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+.light-mode {
+  background: white;
+  color: black;
+}
+
+.light-mode section,
+.light-mode nav,
+.light-mode footer {
+  background: white;
+  color: black;
+}
+
+.light-mode input,
+.light-mode textarea {
+  background: white;
+  color: black;
+}
+
+.light-mode .bg-black {
+  background-color: white;
+}
+
+.light-mode .text-white {
+  color: black;
+}
+
+.light-mode .text-slate-300,
+.light-mode .text-slate-400 {
+  color: #334155;
+}
+
+body {
+  background: #020617;
+  overflow-x: hidden;
+}
+
+.glow {
+  position: fixed;
+  border-radius: 9999px;
+  z-index: -1;
+}
+
+.glow-one {
+  width: 400px;
+  height: 400px;
+  background: #06b6d4;
+  top: -100px;
+  left: -100px;
+  animation: floatOne 10s ease-in-out infinite;
+}
+
+.glow-two {
+  width: 350px;
+  height: 350px;
+  background: #8b5cf6;
+  bottom: -100px;
+  right: -100px;
+  animation: floatTwo 12s ease-in-out infinite;
+}
+
+.glow-three {
+  width: 300px;
+  height: 300px;
+  background: #2563eb;
+  top: 40%;
+  left: 40%;
+  animation: floatThree 14s ease-in-out infinite;
+}
+
+@keyframes floatOne {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes floatTwo {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(-50px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes floatThree {
+  0% {
+    transform: translate(-20px, 0px);
+  }
+  50% {
+    transform: translate(20px, 30px);
+  }
+  100% {
+    transform: translate(-20px, 0px);
+  }
+}
+
+.water-splash {
+  overflow: hidden;
+  clip-path: inset(0 round 3rem);
+}
+
+.splash-wave {
+  position: absolute;
+  overflow: hidden;
+  left: 55px;
+  bottom: 65px;
+  width: 360px;
+  height: 150px;
+  border-radius: 48% 52% 45% 55%;
+  border: 3px solid rgba(34, 211, 238, 0.5);
+  background:
+    radial-gradient(circle at 35% 35%, rgba(255, 255, 255, 0.35), transparent 12%),
+    radial-gradient(circle at 55% 65%, rgba(34, 211, 238, 0.35), transparent 42%),
+    linear-gradient(135deg, rgba(34, 211, 238, 0.24), rgba(14, 165, 233, 0.04));
+  backdrop-filter: blur(4px);
+  transform: rotate(-10deg);
+  animation: splashMove 5s ease-in-out infinite;
+}
+
+.splash-two {
+  left: 95px;
+  bottom: 105px;
+  width: 280px;
+  height: 125px;
+  opacity: 0.55;
+  transform: rotate(18deg);
+  animation-delay: 0.8s;
+}
+
+.splash-three {
+  left: 160px;
+  bottom: 140px;
+  width: 190px;
+  height: 90px;
+  opacity: 0.45;
+  transform: rotate(-28deg);
+  animation-delay: 1.4s;
+}
+
+.splash-wave::before,
+.splash-wave::after {
+  content: "";
+  position: absolute;
+  width: 95px;
+  height: 160px;
+  border-radius: 60% 40% 70% 30%;
+  border: 3px solid rgba(125, 249, 255, 0.45);
+  background: linear-gradient(
+    180deg,
+    rgba(34, 211, 238, 0.32),
+    rgba(34, 211, 238, 0.03)
+  );
+}
+
+.splash-wave::before {
+  left: 20px;
+  top: -105px;
+  transform: rotate(-35deg);
+}
+
+.splash-wave::after {
+  right: 35px;
+  top: -90px;
+  transform: rotate(38deg);
+}
+.splash-drop {
+  position: absolute;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 25%, white, transparent 24%),
+    rgba(34, 211, 238, 0.65);
+  box-shadow: 0 0 24px rgba(34, 211, 238, 0.9);
+  animation: dropFloat 4s ease-in-out infinite;
+  .splash-drop {
+  max-width: 100%;
+  max-height: 100%;
+}
+}
+
+.d1 {
+  left: 80px;
+  top: 80px;
+  width: 16px;
+  height: 16px;
+}
+
+.d2 {
+  left: 150px;
+  top: 35px;
+  width: 10px;
+  height: 10px;
+  animation-delay: 0.6s;
+}
+
+.d3 {
+  left: 270px;
+  top: 55px;
+  width: 13px;
+  height: 13px;
+  animation-delay: 1s;
+}
+
+.d4 {
+  left: 370px;
+  top: 110px;
+  width: 9px;
+  height: 9px;
+  animation-delay: 1.5s;
+}
+
+.d5 {
+  left: 420px;
+  top: 160px;
+  width: 12px;
+  height: 12px;
+  animation-delay: 2s;
+}
+
+.d6 {
+  left: 215px;
+  top: 15px;
+  width: 7px;
+  height: 7px;
+  animation-delay: 2.6s;
+}
+
+@keyframes splashMove {
+  0% {
+    transform: rotate(-10deg) translateY(0) scale(1);
+  }
+
+  50% {
+    transform: rotate(-7deg) translateY(-12px) scale(1.04);
+  }
+
+  100% {
+    transform: rotate(-10deg) translateY(0) scale(1);
+  }
+}
+
+@keyframes dropFloat {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateY(-18px) scale(1.25);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.45;
+  }
+}
