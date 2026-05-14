@@ -50,8 +50,8 @@ function Reviews() {
     if (!name.trim() || !message.trim()) return;
 
     await addDoc(collection(db, "reviews"), {
-      name: user.displayName,
-photo: user.photoURL,
+      name: user?.displayName || "Anonymous",
+photo: user?.photoURL || "",
       message,
       rating,
       createdAt: serverTimestamp(),
