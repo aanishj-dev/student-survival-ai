@@ -89,13 +89,15 @@ async function handleSubmit(e) {
 }
   return (
     <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
-      <h2 className="text-3xl font-black sm:text-5xl">
-        Student Reviews
-      </h2>
+      <div className="mb-12 text-center">
+  <h2 className="text-3xl font-black sm:text-5xl">
+    Student Reviews
+  </h2>
 
-      <p className="mb-12 text-center text-slate-400">
-        Real feedback from students using the platform
-      </p>
+  <p className="mt-4 text-slate-400">
+    Real feedback from students using the platform
+  </p>
+</div>
 
      <form
   onSubmit={handleSubmit}
