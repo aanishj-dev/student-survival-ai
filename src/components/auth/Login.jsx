@@ -1,4 +1,4 @@
-import { signInWithPopup, signOut } from "firebase/auth";
+import { signInWithPopup, signOut, onAuthStateChanged } from "firebase/auth";
 import { auth, provider } from "../../firebase";
 import { useEffect, useState } from "react";
 
@@ -6,7 +6,7 @@ function Login() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
     });
 
@@ -32,14 +32,14 @@ function Login() {
 
           {/* PROFILE IMAGE */}
           <img
-            src={user?.photoURL}
-            alt=""
+            src={user?.photoURL || ""}
+            alt={user?.displayName || "Student"}
             className="h-10 w-10 rounded-full border-2 border-cyan-400 object-cover"
           />
 
           {/* USER NAME */}
           <p className="hidden sm:block max-w-[120px] truncate text-sm font-medium text-white">
-            auth.currentUser?.displayName
+            {user?.displayName || "Student"}
           </p>
 
           {/* LOGOUT BUTTON */}
