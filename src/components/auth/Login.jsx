@@ -32,14 +32,14 @@ function Login() {
 
           {/* PROFILE IMAGE */}
           <img
-            src={user.photoURL}
+            src={user?.photoURL}
             alt=""
             className="h-10 w-10 rounded-full border-2 border-cyan-400 object-cover"
           />
 
           {/* USER NAME */}
           <p className="hidden sm:block max-w-[120px] truncate text-sm font-medium text-white">
-            {user.displayName}
+            auth.currentUser?.displayName
           </p>
 
           {/* LOGOUT BUTTON */}

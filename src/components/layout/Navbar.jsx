@@ -21,9 +21,9 @@ const handleLogin = async () => {
     const result = await signInWithPopup(auth, provider);
 
     const user = {
-      name: result.user.displayName,
-      photo: result.user.photoURL,
-      email: result.user.email,
+     name: result.user?.displayName || "Student",
+photo: result.user?.photoURL || "",
+email: result.user?.email || "",
     };
 
     localStorage.setItem("studentUser", JSON.stringify(user));
@@ -80,23 +80,24 @@ const handleLogin = async () => {
 
           <div className="relative">
             <div className="absolute inset-0 rounded-full bg-cyan-400/20 blur-md"></div>
-
-            <img
-              src={user.photo}
-              alt={user.name}
+<img
+  src={user?.photo}
+  alt={user?.name}
+  className="relative h-11 w-11 rounded-full border border-cyan-400/30 object-cover"
+/>
               className="relative h-11 w-11 rounded-full border border-cyan-400/30 object-cover"
-            />
+            
           </div>
 
-          <div className="hidden sm:block">
-            <p className="max-w-[140px] truncate text-sm font-semibold text-white">
-              {user.name}
-            </p>
+<div className="hidden sm:block">
+  <p className="max-w-[140px] truncate text-sm font-semibold text-white">
+    {user?.name}
+  </p>
 
-            <p className="text-xs text-slate-400">
-              Active Session
-            </p>
-          </div>
+  <p className="text-xs text-slate-400">
+    Active Session
+  </p>
+</div>
 
           <button
             onClick={handleLogout}
