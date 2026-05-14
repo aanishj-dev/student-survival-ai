@@ -73,8 +73,8 @@ localStorage.setItem(
   }
 
   return (
-    <section className="mx-auto max-w-6xl px-6 pb-24">
-      <h2 className="mb-4 text-center text-4xl font-black">
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <h2 className="text-3xl font-black sm:text-5xl">
         AI Finance Insights
       </h2>
 

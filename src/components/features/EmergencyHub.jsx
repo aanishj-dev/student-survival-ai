@@ -23,7 +23,7 @@ function EmergencyHub() {
   ]
 
   return (
-    <section id="emergency" className="mx-auto max-w-6xl px-6 pb-24">
+    <section id="emergency" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
       <h2 className="mb-4 text-center text-4xl font-black">
         UK Emergency Support Hub
       </h2>
@@ -38,7 +38,7 @@ function EmergencyHub() {
             key={item.title}
             className="rounded-2xl bg-white/5 backdrop-blur-xl border border-white/10 p-5"
           >
-            <h3 className="text-2xl font-bold">{item.title}</h3>
+            <h3 className="text-3xl font-black sm:text-5xl">{item.title}</h3>
 
             <p className="mt-3 text-3xl font-black text-cyan-400">
               {item.number}

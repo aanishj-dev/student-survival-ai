@@ -88,8 +88,8 @@ async function handleSubmit(e) {
   }
 }
   return (
-    <section className="mx-auto max-w-6xl px-6 py-24">
-      <h2 className="mb-4 text-center text-5xl font-black text-white">
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
+      <h2 className="text-3xl font-black sm:text-5xl">
         Student Reviews
       </h2>
 
@@ -97,10 +97,10 @@ async function handleSubmit(e) {
         Real feedback from students using the platform
       </p>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mx-auto mb-16 max-w-2xl space-y-5 rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
-      >
+     <form
+  onSubmit={handleSubmit}
+  className="mx-auto mb-16 max-w-2xl space-y-5 rounded-3xl border border-white/10 bg-white/5 p-4 sm:p-8 backdrop-blur-xl"
+>
         <input
           type="text"
           placeholder="Your name"

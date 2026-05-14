@@ -23,7 +23,7 @@ function FAQ() {
   ]
 
   return (
-    <section className="mx-auto max-w-5xl px-6 pb-24">
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
       <h2 className="mb-10 text-center text-4xl font-black">
         Student FAQ
       </h2>

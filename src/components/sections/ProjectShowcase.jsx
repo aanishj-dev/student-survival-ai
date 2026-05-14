@@ -1,3 +1,4 @@
+
 function ProjectShowcase() {
   const techStack = [
     "React",
@@ -11,7 +12,7 @@ function ProjectShowcase() {
   ]
 
   return (
-    <section className="mx-auto max-w-6xl px-6 pb-24">
+    <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-24">
       <h2 className="mb-4 text-center text-4xl font-black">
         Project Showcase
       </h2>
@@ -24,7 +25,7 @@ function ProjectShowcase() {
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-3xl border border-white/10 bg-white/5 p-6">
-          <h3 className="text-2xl font-bold text-cyan-400">
+          <h3 className="text-3xl font-black sm:text-5xl">
             Technologies Used
           </h3>
 
