@@ -44,25 +44,27 @@ function Reviews() {
       return () => unsubscribe();
   }, []);
 
-  async function handleSubmit(e) {
-    e.preventDefault();
+  async function fetchReviews() {
+  try {
+    const q = query(
+      collection(db, "reviews"),
+      orderBy("createdAt", "desc")
+    );
 
-    if (!name.trim() || !message.trim()) return;
+    const snapshot = await getDocs(q);
 
-await addDoc(collection(db, "reviews"), {
-  name: name || "Anonymous",
-  photo: user?.photoURL || "",
-  message,
-  rating,
-  createdAt: serverTimestamp(),
-});
+    const data = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
 
-    setName("");
-    setMessage("");
-    setRating(5);
+    console.log("Fetched Reviews:", data);
 
-    fetchReviews();
+    setReviews(data);
+  } catch (error) {
+    console.error("Error fetching reviews:", error);
   }
+}
 
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
