@@ -36,15 +36,17 @@ function Reviews() {
     setReviews(data);
   }
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-  setUser(currentUser);
-});
-    fetchReviews();
-      return () => unsubscribe();
-  }, []);
+ useEffect(() => {
+  const unsubscribe = auth.onAuthStateChanged((currentUser) => {
+    setUser(currentUser);
+  });
 
-  async function fetchReviews() {
+  fetchReviews();
+
+  return () => unsubscribe();
+}, []);
+
+async function fetchReviews() {
   try {
     const q = query(
       collection(db, "reviews"),
@@ -58,14 +60,33 @@ function Reviews() {
       ...doc.data(),
     }));
 
-    console.log("Fetched Reviews:", data);
-
     setReviews(data);
   } catch (error) {
     console.error("Error fetching reviews:", error);
   }
 }
 
+async function handleSubmit(e) {
+  e.preventDefault();
+
+  try {
+    await addDoc(collection(db, "reviews"), {
+      name: name || "Anonymous",
+      photo: user?.photoURL || "",
+      message,
+      rating,
+      createdAt: serverTimestamp(),
+    });
+
+    setName("");
+    setMessage("");
+    setRating(5);
+
+    fetchReviews();
+  } catch (error) {
+    console.error(error);
+  }
+}
   return (
     <section className="mx-auto max-w-6xl px-6 py-24">
       <h2 className="mb-4 text-center text-5xl font-black text-white">
