@@ -49,13 +49,13 @@ function Reviews() {
 
     if (!name.trim() || !message.trim()) return;
 
-    await addDoc(collection(db, "reviews"), {
-      name: user?.displayName || "Anonymous",
-photo: user?.photoURL || "",
-      message,
-      rating,
-      createdAt: serverTimestamp(),
-    });
+await addDoc(collection(db, "reviews"), {
+  name: name || "Anonymous",
+  photo: user?.photoURL || "",
+  message,
+  rating,
+  createdAt: serverTimestamp(),
+});
 
     setName("");
     setMessage("");
