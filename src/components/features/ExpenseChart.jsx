@@ -30,8 +30,8 @@ function ExpenseChart({ rent, food, transport, other }) {
         Expense Breakdown
       </h4>
 
-     <div className="w-full h-[300px]">
-  <ResponsiveContainer width="100%" height={300}>
+      <div className="h-64">
+        <ResponsiveContainer>
           <PieChart>
             <Pie
               data={data}
