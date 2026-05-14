@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import ParticlesBackground from "./ParticlesBackground";
 
 function Hero() {
   return (
@@ -10,8 +9,7 @@ function Hero() {
         transition={{ delay: 0.2, duration: 0.6 }}
         className="relative isolate overflow-hidden rounded-[3rem] border border-white/10 bg-black/70 px-4 py-10 sm:px-8 sm:py-14"
       >
-        {/* Premium cursor particle effect */}
-        <ParticlesBackground />
+        
 
         {/* Background glow */}
         <div className="absolute inset-0 opacity-40">
